@@ -6,6 +6,14 @@ A modern, responsive news website that delivers fresh headlines and breaking new
 
 ## 🌟 Features
 
+<img width="1920" height="1080" alt="Screenshot 2025-08-09 171009" src="https://github.com/user-attachments/assets/41ab2b4f-41fb-40d1-a569-b554874865c1" />
+
+<img width="1920" height="1080" alt="Screenshot 2025-08-09 171018" src="https://github.com/user-attachments/assets/1032fc73-d4cb-4ccf-bee6-75ae013195ec" />
+
+<img width="1920" height="1080" alt="Screenshot 2025-08-09 171029" src="https://github.com/user-attachments/assets/ac18fb87-60e4-48f7-a938-a755a172ba3b" />
+
+<img width="1920" height="1080" alt="Screenshot 2025-08-09 171126" src="https://github.com/user-attachments/assets/bf410a1a-d9ca-4049-9d55-74b0248d46a9" />
+
 ### 📱 **Responsive Design**
 - Modern dark theme with cyan accents
 - Fully responsive layout that works on all devices
@@ -31,9 +39,78 @@ A modern, responsive news website that delivers fresh headlines and breaking new
 - Loading states and error handling
 - Image fallbacks for better reliability
 
-## 🚀 Live Demo
+## 🚨 Important Note for Hosting
 
-Visit the live website: [https://kholdhart.github.io/The-News/](https://kholdhart.github.io/The-News/)
+This project uses NewsAPI which has the following limitations:
+- **✅ Local Development**: Works perfectly with any valid API key
+- **❌ Live Hosting**: Requires a paid NewsAPI plan ($449/month)
+
+For **live deployment**, the API calls will fail on domains like GitHub Pages. This is a NewsAPI restriction, not a code issue.
+
+## 🚀 Quick Start (Local Development)
+
+### Prerequisites
+- A modern web browser
+- A local development server (optional but recommended)
+
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/KholdHart/The-News.git
+cd The-News
+```
+
+### Step 2: Get Your NewsAPI Key
+1. Visit [NewsAPI.org](https://newsapi.org/)
+2. Sign up for a **free account**
+3. Copy your API key from the dashboard
+
+### Step 3: Update the API Key
+1. Open `api.js` in your text editor
+2. Replace the API key on line 3:
+```javascript
+const API_KEY = 'paste-your-api-key-here'
+```
+
+### Step 4: Run the Project
+
+#### Option A: Simple File Opening
+1. Double-click `index.html` to open in your browser
+2. That's it! The website should work locally.
+
+#### Option B: Local Server (Recommended)
+Running with a local server prevents CORS issues:
+
+**Using Python:**
+```bash
+# Python 3
+python -m http.server 8000
+
+# Python 2
+python -M SimpleHTTPServer 8000
+```
+
+**Using Node.js:**
+```bash
+# Install serve globally
+npm install -g serve
+
+# Run the server
+serve .
+```
+
+**Using PHP:**
+```bash
+php -S localhost:8000
+```
+
+**Using VS Code:**
+- Install "Live Server" extension
+- Right-click `index.html` → "Open with Live Server"
+
+### Step 5: Open in Browser
+Navigate to:
+- **File method**: The file should open automatically
+- **Local server**: `http://localhost:8000`
 
 ## 🛠️ Technologies Used
 
@@ -56,50 +133,6 @@ The-News/
 └── LICENSE             # MIT License
 ```
 
-## ⚡ Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/KholdHart/The-News.git
-   cd The-News
-   ```
-
-2. **Get a NewsAPI key**
-   - Visit [NewsAPI.org](https://newsapi.org/)
-   - Sign up for a free account
-   - Get your API key
-
-3. **Update the API key**
-   - Open `api.js`
-   - Replace the API key with your own:
-   ```javascript
-   const API_KEY = 'your-api-key-here';
-   ```
-
-4. **Launch the website**
-   - Open `index.html` in your browser
-   - Or use a local server:
-   ```bash
-   # Python
-   python -m http.server 8000
-   
-   # Node.js
-   npx serve .
-   ```
-
-## 🌐 Deployment
-
-### GitHub Pages (Recommended)
-1. Push your code to GitHub
-2. Go to repository Settings → Pages
-3. Select "Deploy from branch" → main branch
-4. Your site will be live at `https://yourusername.github.io/The-News/`
-
-### Alternative Hosting
-- **Netlify**: Drag and drop deployment
-- **Vercel**: Connect your GitHub repository
-- **Render**: Static site hosting
-
 ## 🔧 Configuration
 
 ### API Settings
@@ -113,6 +146,14 @@ The website uses NewsAPI with the following endpoints:
 - **Layout**: Adjust grid columns in `.content-wrapper`
 - **Categories**: Update category buttons in `index.html`
 
+## 🌐 Live Demo
+
+⚠️ **Note**: Due to NewsAPI restrictions, the live demo may not work properly. The project is designed for local development.
+
+For a working live version, you would need to:
+1. Upgrade to NewsAPI's paid plan, or
+2. Switch to a free alternative API service
+
 ## 📱 Browser Support
 
 - Chrome (recommended)
@@ -121,6 +162,29 @@ The website uses NewsAPI with the following endpoints:
 - Edge
 - Mobile browsers
 
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**❌ "No articles found" or blank page:**
+- Check that your API key is correctly set in `api.js`
+- Verify your API key is valid at [NewsAPI.org](https://newsapi.org)
+- Make sure you're running locally (not on a live domain)
+- Check browser console for error messages
+
+**❌ CORS errors:**
+- Use a local server instead of opening the file directly
+- Try the Python/Node.js server methods above
+
+**❌ Images not loading:**
+- This is normal - some news sources block external image access
+- Fallback images will be used automatically
+
+### API Limits
+- **Free tier**: 100 requests per day
+- **Rate limit**: 1000 requests per day maximum
+- **Development only**: Cannot be used on live domains
+
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -128,12 +192,6 @@ The website uses NewsAPI with the following endpoints:
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## 🐛 Known Issues
-
-- API key is exposed in client-side code (acceptable for demo purposes)
-- NewsAPI free tier has request limitations
-- Some news sources may block images (fallback images are provided)
 
 ## 🔮 Future Enhancements
 
@@ -144,6 +202,7 @@ The website uses NewsAPI with the following endpoints:
 - [ ] User authentication system
 - [ ] Bookmark and share functionality
 - [ ] Push notifications for breaking news
+- [ ] Alternative API integration for live hosting
 
 ## 📄 License
 
@@ -166,3 +225,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ⭐ **Star this repo if you found it helpful!**
 
 *Built with ❤️ by one, for all*
+
+## 💡 Pro Tips
+
+- **Test locally first** before trying to deploy
+- **Keep your API key secure** - don't commit it to public repos
+- **Use environment variables** in production applications
+- **Consider alternative APIs** for live hosting needs

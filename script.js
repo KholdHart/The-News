@@ -1,6 +1,7 @@
-import { getNews } from "./api";
-
+import { getNews } from "./api.js";
+const newsSearchInput = document.getElementById('newsSearchInput');
 const contentWrapper = document.getElementById('contentWrapper');
+
 
 getNews().then(data => renderNews(data.articles))
 
@@ -32,7 +33,15 @@ function renderNews(newsData) {
        `
 
        //apend the card to the content-wrapper
-       contentWrapper.insertAdjacentHTML('beforeend', card);
+       contentWrapper.insertAdjacentHTML('beforeend', card )
 })
 
 }
+
+// Event Listiner for searching
+
+newsSearchInput.addEventListener('input', event => {
+    const inputSearchValue = event.target.value 
+
+    console.log(inputSearchValue)
+})

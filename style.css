@@ -43,6 +43,8 @@
     max-width: 70rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .news-search-input {
@@ -57,4 +59,79 @@
 
 .news-search-input::placeholder {
     color: #ffffff;
+    }
+
+    .content {
+
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+
+    }
+
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        max-width: 70rem;
+        gap: 1.5rem;;
+    }
+
+    .card {
+        background: white;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .card-image-wrapper {
+       height: 250px;
+       overflow: hidden;
+    }
+
+    .card-image-wrapper img {
+        width: 100%;
+        object-fit: cover;
+        transition: 03s ease;
+    }
+
+    .card-image-wrapper img:hover {
+        transform: scale(1.1);
+    }
+
+    .card-content {
+        padding: 0.8rem;
+
+    }
+
+    .card-date, 
+    .card-description {
+        color: #7f7f7f;
+
+    }
+
+    .card-title {
+        color: black;
+        text-decoration: none;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orientt: vertical;
+        overflow: hidden;
+    }
+
+    .card-title a:hover {
+        text-decoration: underline;
+    }
+
+    .card-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orientt: vertical;
+        overflow: hidden;
+    }
+
+    @media screen and (max-width: 500px) {
+        .content-wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }

@@ -77,8 +77,8 @@
     }
 
     .card {
-        background: white;
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+        background: rgb(255, 255, 255);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         border-radius: 1rem;
         overflow: hidden;
     }
@@ -115,7 +115,7 @@
         text-decoration: none;
         display: -webkit-box;
         -webkit-line-clamp: 3;
-        -webkit-box-orientt: vertical;
+        -webkit-box-orient: vertical;
         overflow: hidden;
     }
 
@@ -126,7 +126,7 @@
     .card-description {
         display: -webkit-box;    
         -webkit-line-clamp: 3;
-        -webkit-box-orientt: vertical;
+        -webkit-box-orient: vertical;
         overflow: hidden;
     }
 

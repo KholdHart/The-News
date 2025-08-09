@@ -1,14 +1,15 @@
-import { getNews } from "./api.js";
+import { getNews, getSearchNews } from "./api.js";
 const newsSearchInput = document.getElementById('newsSearchInput');
 const contentWrapper = document.getElementById('contentWrapper');
-
+const messageText = document.getElementById('messageText');
 
 getNews().then(data => renderNews(data.articles))
 
 function renderNews(newsData) {
     newsData.forEach(news => {
+        const defaultImage = 'https://picsum.photos/600'
     const data = {
-        urlImage: news.urlToImage,
+        urlImage: news.urlToImage ?? defaultImage,
         data: news.publishedAt,
         title: news.title,
         description: news.description,
@@ -38,10 +39,29 @@ function renderNews(newsData) {
 
 }
 
-// Event Listiner for searching
+// Event Listener for searching
 
 newsSearchInput.addEventListener('input', event => {
     const inputSearchValue = event.target.value 
 
-    console.log(inputSearchValue)
+    contentWrapper.innerHTML = ''; // Clear previous results
+    if  (inputSearchValue == '') {
+        getNews().then(data => renderNews(data.articles));
+       
+    } else 
+        {
+            getSearchNews(inputSearchValue).then(
+            data => renderNews(data.articles))
+
+    }
+
+    getSearchNews(inputSearchValue).then(
+        data => renderNews(data.articles))
+    
 })
+
+export function showMessageText(message) {
+    messageText.style.display = 'flex';
+    messageText.textContent = message;
+
+}

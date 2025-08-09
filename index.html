@@ -12,17 +12,57 @@
 <body>
     <header class="header">
         <div class="header-wrapper">
-            <h1>The NEWS</h1>
-            <input type="search" class="news-search-input" placeholder="Search news"
-            id="newsSearchInput">
+            <div class="logo">
+                <h1>The NEWS</h1>
+            </div>
+            <div class="search-container">
+                <input type="search" class="news-search-input" placeholder="Search headlines, topics, or sources..."
+                id="newsSearchInput">
+                <button class="search-btn" id="searchBtn">Search</button>
+            </div>
         </div>
     </header>
     
-    <div class="content">
-        <div class="content-wrapper" id="contentWrapper">
-          
-        </div> 
-        <h3 class="message-text" id="messageText"> Loading ...</h3>
-    </div>
+    <main class="main-content">
+        <div class="hero-section">
+            <div class="hero-wrapper">
+                <h2 class="hero-title">Top headlines</h2>
+                <p class="hero-description">Whats new in The NEWS?</p>
+                
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="">general</button>
+                    <button class="category-btn" data-category="business">business</button>
+                    <button class="category-btn" data-category="entertainment">entertainment</button>
+                    <button class="category-btn" data-category="health">health</button>
+                    <button class="category-btn" data-category="science">science</button>
+                    <button class="category-btn" data-category="sports">sports</button>
+                    <button class="category-btn" data-category="technology">technology</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="content-wrapper" id="contentWrapper">
+              
+            </div> 
+            <h3 class="message-text" id="messageText">Loading...</h3>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="footer-content">
+                <div class="footer-section centered">
+                    <h3>The NEWS</h3>
+                    <p>Stay informed with the latest headlines and breaking news from around the world.</p>
+                    <p>By one, for all.</p>
+                   
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The News. All rights reserved. Powered by NewsAPI</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

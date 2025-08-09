@@ -37,6 +37,8 @@ function renderNews(newsData) {
        contentWrapper.insertAdjacentHTML('beforeend', card )
 })
 
+messageText.style.display = 'none' // Hide the loading message after rendering
+
 }
 
 // Event Listener for searching
